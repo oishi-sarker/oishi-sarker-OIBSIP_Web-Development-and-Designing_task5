@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-char-950 text-char-100 antialiased;
+  }
+  h1, h2, h3 {
+    @apply font-display tracking-wide;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg font-semibold transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-ember-500 text-char-950 hover:bg-ember-400 active:scale-95 shadow-md shadow-ember-500/30;
+  }
+  .btn-secondary {
+    @apply btn bg-char-800 text-ember-400 border border-char-600 hover:bg-char-700 active:scale-95;
+  }
+  .btn-ghost {
+    @apply btn text-char-200 hover:bg-char-800;
+  }
+  .input {
+    @apply w-full px-4 py-2.5 rounded-lg border border-char-600 bg-char-800 text-char-50 placeholder-char-400 focus:border-ember-500 focus:ring-2 focus:ring-ember-500/30 focus:outline-none transition;
+  }
+  .label {
+    @apply block text-sm font-medium text-char-200 mb-1.5;
+  }
+  .card {
+    @apply bg-char-800 rounded-xl shadow-sm border border-char-700 overflow-hidden;
+  }
+  .badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+  .badge-veg {
+    @apply badge bg-green-900/50 text-green-300 border border-green-700/50;
+  }
+  .badge-nonveg {
+    @apply badge bg-ember-900/50 text-ember-300 border border-ember-700/50;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #574838; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #c2843c; }
